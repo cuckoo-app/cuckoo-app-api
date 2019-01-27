@@ -1,5 +1,5 @@
 Resources:
-  AttachmentsBucket:
+  StdoutBucket:
     Type: AWS::S3::Bucket
     Properties:
       # Set the CORS policy
@@ -20,6 +20,6 @@ Resources:
 
 # Print out the name of the bucket that is created
 Outputs:
-  AttachmentsBucketName:
+  StdoutBucketName:
     Value:
-      Ref: AttachmentsBucket
+      Ref: StdoutBucket
