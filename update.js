@@ -16,12 +16,13 @@ export async function main(event, context) {
     // 'ExpressionAttributeValues' defines the value in the update expression
     UpdateExpression: "SET dateModified = :dateModified, " +
                       "jobStatus = :jobStatus, runtime = :runtime, " +
-                      "stdout = :stdout",
+                      "stdout = :stdout, unread = :unread",
     ExpressionAttributeValues: {
       ":dateModified": data.dateModified || null,
       ":jobStatus": data.jobStatus || null,
       ":runtime": data.runtime || null,
       ":stdout": data.stdout || null,
+      ":unread": data.unread || true,
     },
     // 'ReturnValues' specifies if and how to return the item's attributes,
     // where ALL_NEW returns all attributes of the item after the update; you
