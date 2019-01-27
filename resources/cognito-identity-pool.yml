@@ -71,7 +71,7 @@ Resources:
                       - Ref: ApiGatewayRestApi
                       - '/*'
 
-              # Allow users to upload attachments to their
+              # Allow users to upload stdouts to their
               # folder inside our S3 bucket
               - Effect: 'Allow'
                 Action:
@@ -80,7 +80,7 @@ Resources:
                   - Fn::Join:
                     - ''
                     -
-                      - Fn::GetAtt: [AttachmentsBucket, Arn]
+                      - Fn::GetAtt: [StdoutBucket, Arn]
                       - '/private/'
                       - '$'
                       - '{cognito-identity.amazonaws.com:sub}/*'
