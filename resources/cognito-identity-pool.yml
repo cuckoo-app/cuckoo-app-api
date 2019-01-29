@@ -95,7 +95,11 @@ Resources:
                 Condition:
                   ForAllValues:StringEquals:
                     dynamodb:LeadingKeys:
-                      '${cognito-identity.amazonaws.com:sub}'
+                      - Fn::Join:
+                        - ''
+                        -
+                          - '$'
+                          - '{cognito-identity.amazonaws.com:sub}'
 
 
 # Print out the Id of the Identity Pool that is created
