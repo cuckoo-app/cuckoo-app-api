@@ -92,6 +92,11 @@ Resources:
                   - 'dynamodb:DeleteItem'
                 Resource:
                   - Fn::GetAtt: [JobsTable, Arn]
+                Condition:
+                  ForAllValues:StringEquals:
+                    dynamodb:LeadingKeys:
+                      '${cognito-identity.amazonaws.com:sub}'
+
 
 # Print out the Id of the Identity Pool that is created
 Outputs:
