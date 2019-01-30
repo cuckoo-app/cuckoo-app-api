@@ -27,7 +27,7 @@ export async function main(event, context) {
       machine: data.machine,
       runtime: data.runtime,
       stdout: data.stdout,
-      unread: 'true',
+      unread: true,
     }
   };
 

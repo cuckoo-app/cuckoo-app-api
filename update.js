@@ -22,7 +22,7 @@ export async function main(event, context) {
       ":jobStatus": data.jobStatus || null,
       ":runtime": data.runtime || null,
       ":stdout": data.stdout || null,
-      ":unread": data.unread || 'true',
+      ":unread": data.unread || true,
     },
     // 'ReturnValues' specifies if and how to return the item's attributes,
     // where ALL_NEW returns all attributes of the item after the update; you
