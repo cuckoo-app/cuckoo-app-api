@@ -83,8 +83,7 @@ Resources:
                       - '/private/'
                       - '$'
                       - '{cognito-identity.amazonaws.com:sub}/*'
-              # Allow users to upload stdouts to their
-              # folder inside our S3 bucket
+              # DynamoDB permissions
               - Effect: 'Allow'
                 Action:
                   - 'dynamodb:PutItem'
@@ -100,6 +99,12 @@ Resources:
                         -
                           - '$'
                           - '{cognito-identity.amazonaws.com:sub}'
+              # SES permissions
+              - Effect: 'Allow'
+                Action:
+                  - 'ses:SendEmail'
+                  - 'ses:SendRawEmail'
+                Resource: '*'
 
 
 # Print out the Id of the Identity Pool that is created
